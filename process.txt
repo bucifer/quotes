@@ -1,0 +1,8 @@
+Quotes App
+1) Makes string parsing programs in Ruby to make every categorized quote block into a CSV-file
+
+2) Put that CSV through to make a database in PostgreSQL
+
+3) Then start on the Rails app 
+
+
