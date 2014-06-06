@@ -28,7 +28,7 @@ end
 count = 0
 @nextStartingPoint = 0
 
-while count < 10
+while count < 1000
 	if count == 0 
 		puts "count = 0 "
 		dividerIndex = each_line_array.index("----")
