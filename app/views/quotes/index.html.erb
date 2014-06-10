@@ -1,0 +1,31 @@
+<h1>Listing quotes</h1>
+<%= @quotes.find(10).category %>
+<br>
+<%= @quotes.find(10).author %>
+<br>
+<%= @quotes.find(10).quotetext %>
+<br><br>
+<%= @quotes.last.category %>
+<br>
+<%= @quotes.last.author %>
+<br>
+<%= @quotes.last.quotetext %>
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quotes.each do |quote| %>
+      <tr>
+        <td><%= link_to 'Show', quote %></td>
+        <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
+        <td><%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
