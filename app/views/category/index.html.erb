@@ -1,0 +1,9 @@
+<h1>Category Controller, Index Action</h1>
+<br>
+<% @quotes.uniq.pluck('category').sort.each do |category| %>
+ <ul>  
+ <li>
+  <%= link_to category, category_path(category) %> 
+</li>
+ </ul> 
+ <% end %>
