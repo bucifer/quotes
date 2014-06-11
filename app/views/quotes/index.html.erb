@@ -1,32 +1,10 @@
-<h1>Listing quotes</h1>
+<h1>Index Page, Listing Quote Categories</h1>
 <br>
-<%= Quote.first.text %>
-<br>
-<p>this is using @quotes</p>
-<%= @quotes.last.author %>
-<%= @quotes.last.text %>
-<br>
-<%= @quotes.first.author %>
-<%= @quotes.first.text %>
-<br>
-<br><br>
-<p>this is using Quote</p>
-<br>
-<%= Quote.last.author %>
-<%= Quote.last.text %>
-<br>
-<%= Quote.first.author %>
-<%= Quote.first.text %>
-<br>
-<br>
-<br>
-<%= will_paginate %>
-<% @quotes.each do |quote| %>
- <ul class="quotes">  
+<% @quotes.uniq.pluck('category').sort.each do |category| %>
+ <ul>  
  <li>
-   <!-- quotetext is a field in the quotescopy table that's going to be displayed as text because I made a method in the model file-->
-  <%= quote.text %> 
+   <!-- .text is a method that refers to quotetext in the quotescopy table that I defined in the model.rb !-->
+  <%= category %> 
 </li>
  </ul> 
  <% end %>
- <%= will_paginate %>

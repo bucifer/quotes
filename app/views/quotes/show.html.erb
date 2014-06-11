@@ -1,4 +1,18 @@
-<p id="notice"><%= notice %></p>
+<h1>Category: <%= @quote.category %> </h1>
+
+<p>Author: <%= @quote.author %> </p>
+
+<p><%= @quote.text %></p>
+
+
+<% if @quote.previous.presence %> 
+<%= link_to 'Previous', @quote.previous %> | 
+<% end %>
+<% if @quote.next.presence %> 
+<%= link_to 'Next', @quote.next %>
+<% end %>
+
+<br><br>
 
 <%= link_to 'Edit', edit_quote_path(@quote) %> |
-<%= link_to 'Back', quotes_path %>
+<%= link_to 'Home', quotes_path %> 
