@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'quotes#index'
   get 'quotes/category' => 'category#index'
   get 'quotes/category/:category' => 'category#show', as: 'category'
+  get '/about' => 'static_pages#about', as: :about_page
   resources :quotes
 
   # The priority is based upon order of creation: first created -> highest priority.

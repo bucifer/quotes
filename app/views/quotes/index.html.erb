@@ -1,10 +1,13 @@
-<h1>Quotes Controller, Index Action, Root Page</h1>
-<br>
-<% @quotes.uniq.pluck('category').sort.each do |category| %>
- <ul>  
- <li>
-   <!-- .text is a method that refers to quotetext in the quotescopy table that I defined in the model.rb !-->
-  <%= category %> 
-</li>
- </ul> 
- <% end %>
+<div class='jumbotron'>
+<h1>Root Index Page</h1>
+</div>
+
+
+<ul class="nav nav-pills">
+  <li class="active">    <a href="#">Home</a>  </li>
+  <li><%= link_to 'Create new quote', new_quote_path %></li>
+  <li><a href="/quotes/category">By Category</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+

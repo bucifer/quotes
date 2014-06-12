@@ -1,5 +1,13 @@
+<div class='jumbotron'>
 <h1>Category Controller, Index Action</h1>
-<br>
+</div>
+
+<ul class="nav nav-pills">
+  <li><a href="/">Home</a></li>
+  <li class='active'><a href="/quotes/category">By Category</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
 <% @quotes.uniq.pluck('category').sort.each do |category| %>
  <ul>  
  <li>

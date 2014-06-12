@@ -14,7 +14,7 @@ class QuotesController < ApplicationController
 
   # GET /quotes/new
   def new
-    @quote = Quote.new
+    @quote = Quote.new(quote_params)
   end
 
   # GET /quotes/1/edit
@@ -69,6 +69,6 @@ class QuotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quote_params
-      params[:quote]
+      params.require(:quote).permit(:category, :author, :quotetext)
     end
 end
