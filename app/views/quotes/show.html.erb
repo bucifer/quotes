@@ -1,6 +1,10 @@
 <div class='jumbotron'>
 <h1><%= @quote.category %> </h1>
 </div>
+
+<%= render 'shared/nav' %>
+
+
 <p>Quote #<%= @quote.pkey %> </p>
 <p>Author: <%= @quote.author %> </p>
 <p><%= @quote.text %></p>
@@ -14,8 +18,9 @@
 <% end %>
 </ul>
 
-
-<br><br>
-
-<%= link_to 'Edit', edit_quote_path(@quote) %> |
-<%= link_to 'Home', quotes_path %> 
+<button type="button" class="btn btn-default"> 
+<%= link_to 'Back Home', {:action => 'index'} %>
+</button>
+<button type="button" class="btn btn-default"> 
+<%= link_to 'Edit', edit_quote_path(@quote) %>
+</button>

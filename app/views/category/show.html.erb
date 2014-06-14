@@ -1,3 +1,5 @@
+<%= render 'shared/category' %>
+
 <% @category.each do |quote| %>
 <div>
 <p> <%= quote.category %> </p>
@@ -6,7 +8,4 @@
 </div>
 <% end %>
 
-<ul class="pager">
-  <li><a href="#">Previous</a></li>
-  <li><a href="#">Next</a></li>
-</ul>
+<%= link_to 'Home', quotes_path %>

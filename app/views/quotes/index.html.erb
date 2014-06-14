@@ -3,11 +3,31 @@
 </div>
 
 
-<ul class="nav nav-pills">
-  <li class="active">    <a href="#">Home</a>  </li>
-  <li><%= link_to 'Create new quote', new_quote_path %></li>
-  <li><a href="/quotes/category">By Category</a></li>
-  <li><a href="/about">About</a></li>
-</ul>
+<%= render 'shared/nav' %>
 
 
+<div class="quotes index">
+
+<table class="listing">
+  <tr class="header">
+    <th>Pkey</th>
+    <th>Category</th>
+    <th>Author</th>
+    <th>Quote Text </th>
+  </tr>
+  <% @quotes.each do |quote| %>
+  <tr>
+    <td><%=quote.pkey %></td>
+    <td><%=quote.category %></td>
+    <td><%=quote.author %></td>
+    <td><%=quote.text %></td>
+    <td class="actions">
+    <%= link_to("Show", {:action => 'show', :id => quote.id}) %>
+    <%= link_to("Edit", '#') %>
+    <%= link_to("Delete", '#') %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+ 
+</div>

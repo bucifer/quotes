@@ -1,16 +1,6 @@
 <h1>Create New Quote</h1>
 
-<%= form_for(@quote) do |f| %>
-  <% if @quote.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
-      <ul>
-      <% @quote.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for(:quote, :url => {:action => 'create'}) do |f| %>
 
   <p>
     <%= f.label :category %><br>
@@ -22,7 +12,7 @@
   </p>
     <p>
     <%= f.label :text %><br>
-    <%= f.text_area :text %>
+    <%= f.text_area :quotetext %>
   </p>
   
   <div class="actions">
@@ -31,4 +21,6 @@
 
 <% end %>
 
+<button>
 <%= link_to 'Back', quotes_path %>
+</button>

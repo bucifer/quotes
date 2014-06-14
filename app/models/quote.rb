@@ -3,11 +3,12 @@ class Quote < ActiveRecord::Base
 	self.primary_key = "pkey"
 	
   validates :category, presence: true, length: {minimum: 3, maximum: 25}, 
-  format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
+  format: { with: /\A[a-z A-Z]+\z/, message: "only allows letters" }
   validates :author, presence: true, length: {minimum: 3, maximum: 25}, 
-  format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
-  validates :quotetext, presence: true, length: {minimum: 5}
+  format: { with: /\A[a-z A-Z]+\z/, message: "only allows letters" }
+  validates :quotetext, presence: true
 
+  scope :sorted, lambda {order("pkey ASC")}
   scope :next, lambda {|pkey| where("pkey > ?", pkey).order("pkey ASC") } # this is the default ordering for AR
   scope :previous, lambda {|pkey| where("pkey < ?", pkey).order("pkey DESC") }
 

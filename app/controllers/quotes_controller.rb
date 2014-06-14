@@ -4,17 +4,20 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.json
   def index
-    @quotes = Quote.all
+    @quotes = Quote.sorted
   end
 
   # GET /quotes/1
   # GET /quotes/1.json
   def show
+    @quote = Quote.find(params[:id])
   end
 
   # GET /quotes/new
   def new
-    @quote = Quote.new(quote_params)
+    #new action DISPLAYS the new form page, create PROCESSES the new data
+    @quote = Quote.new
+    #apparently this doesn't really do anything but good to specify
   end
 
   # GET /quotes/1/edit
@@ -24,16 +27,16 @@ class QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
+    #we don't need a TEMPLATE for create beucase it either redirects or renders
+    #create PROCESSES the object data
+    #instantiate a new object using form parameters
     @quote = Quote.new(quote_params)
-
-    respond_to do |format|
-      if @quote.save
-        format.html { redirect_to @quote, notice: 'Quote was successfully created.' }
-        format.json { render :show, status: :created, location: @quote }
-      else
-        format.html { render :new }
-        format.json { render json: @quote.errors, status: :unprocessable_entity }
-      end
+    #if save succeeds, redirect to index root page
+    if @quote.save
+      redirect_to(:action => 'index')
+    #if save fails, redisplay the form so user can fix problems
+    else
+      render('new')
     end
   end
 
@@ -61,6 +64,8 @@ class QuotesController < ApplicationController
     end
   end
 
+  #it's private so only the controller can use it to do its work. 
+  #So it prevents from called as an action.
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quote

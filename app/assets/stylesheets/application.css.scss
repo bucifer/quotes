@@ -17,6 +17,34 @@
 @import "bootstrap";
 @import "bootstrap/theme";
 
+body {
+
+}
+
+.listing {
+	border: 10px solid black;
+    border-spacing: 10px;
+    border-collapse: separate;
+    th {
+    	border: 1px solid black;
+    }
+    td {
+    	border: 1px solid black;
+    }
+
+    	a {
+	  color: #000;
+	  &:visited {
+	    color: brown;
+	  }
+	  &:hover {
+	    color: #fff;
+	    background-color: #000;
+	  }
+	}
+}
+
+
 #navclear {
 	margin-bottom: 5%;
 }
