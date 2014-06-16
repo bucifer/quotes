@@ -2,10 +2,13 @@ Rails.application.routes.draw do
  
   # You can have the root of your site routed with "root"
   root 'quotes#index'
-  get 'quotes/category' => 'category#index'
-  get 'quotes/category/:category' => 'category#show', as: 'category'
+  get '/authors' => 'authors#index', as: 'authors'
+  get '/authors/:author' => 'authors#show', as: 'author_show'
+  get '/category' => 'category#index', as: 'category'
+  get '/category/:category' => 'category#show', as: 'category_show'
   get '/about' => 'static_pages#about', as: :about_page
-  resources :quotes
+    resources :quotes
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

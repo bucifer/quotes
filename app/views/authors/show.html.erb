@@ -1,0 +1,26 @@
+<div class='jumbotron' id="top">
+<h1>By Author: <%= @author.first.author %> </h1>
+</div>
+
+<%= render 'shared/nav' %>
+
+<%= link_to 'Back to Authors Index', authors_path, :class => "btn btn-primary"  %>
+<% if @author.size > 4 %>
+<a class = "btn btn-primary" href="#jumpbottom">Move to Bottom</a>
+<% end %>
+<hr>
+
+<% @author.sort.each do |author| %>
+<div>
+<p><strong> <%= author.category %></strong></p>
+<p><em><%= author.author %></em></p>
+<p> <%= author.text %> </p>
+<hr>
+</div>
+<% end %>
+
+<p><em>End of Page</em></p>
+<div id="jumpbottom"></div>
+<% if @author.size > 4 %>
+  <a href="#top" class="btn btn-primary" id="movebutton">Move to Top</a>
+<% end %>

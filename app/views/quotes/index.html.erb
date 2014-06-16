@@ -1,33 +1,37 @@
-<div class='jumbotron'>
-<h1>Root Index Page</h1>
+<div class='jumbotron' id="top">
+<h1>Terry's Fav Quotes Database</h1>
 </div>
-
 
 <%= render 'shared/nav' %>
 
+  <%= render 'flash' %>
 
-<div class="quotes index">
 
-<table class="listing">
-  <tr class="header">
-    <th>Pkey</th>
-    <th>Category</th>
-    <th>Author</th>
-    <th>Quote Text </th>
-  </tr>
-  <% @quotes.each do |quote| %>
-  <tr>
-    <td><%=quote.pkey %></td>
-    <td><%=quote.category %></td>
-    <td><%=quote.author %></td>
-    <td><%=quote.text %></td>
-    <td class="actions">
-    <%= link_to("Show", {:action => 'show', :id => quote.id}) %>
-    <%= link_to("Edit", '#') %>
-    <%= link_to("Delete", '#') %>
+<div id="quotesindex">
+<a class = "btn btn-primary" href="#jumpbottom">Move to Bottom</a>
+  <table class="listing">
+    <tr class="header">
+      <th>Pkey</th>
+      <th>Category</th>
+      <th>Author</th>
+      <th>Quote Text</th>
+      <th>Actions</th>
+    </tr>
+    <% @quotes.each do |quote| %>
+    <tr>
+      <td><%=quote.pkey %></td>
+      <td><%=quote.category %></td>
+      <td><%=quote.author %></td>
+      <td><%=quote.text %></td>
+      <td class="actions">
+      <%= link_to("Show", {:action => 'show', :id => quote.id}) %>
+      <%= link_to("Edit", {:action => 'edit', :id => quote.id}) %>
+      <%= link_to quote_path(quote.id), method: :delete, data: {confirm: "Really delete Quote ##{quote.id}?"} do %><span class=edit>Delete</span><% end %>
     </td>
-  </tr>
-  <% end %>
-</table>
- 
+    </tr>
+    <% end %>
+  </table>
+  <a href="#top" class="btn btn-primary" id="movebutton">Move to Top</a>
+  <div id="jumpbottom"</div>
+
 </div>

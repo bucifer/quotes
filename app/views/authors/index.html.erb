@@ -1,0 +1,13 @@
+<div class='jumbotron' id="top">
+<h1>By Author Index</h1>
+</div>
+
+<%= render 'shared/nav' %>
+
+<ol>
+  <% @quotes.uniq.pluck('author').sort.each do |author| %>  
+    <li>
+    <%= link_to author, author_show_path(author) %> (<%= @quotes.where(author: author).count %>)
+    </li>
+  <% end %>
+</ol>

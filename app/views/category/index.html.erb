@@ -1,9 +1,12 @@
-<%= render 'shared/category' %>
+<div class='jumbotron' id="top">
+<h1>Category Index</h1>
+</div>
+<%= render 'shared/nav' %>
 
-<% @quotes.uniq.pluck('category').sort.each do |category| %>
- <ul>  
- <li>
-  <%= link_to category, category_path(category) %> 
-</li>
- </ul> 
- <% end %>
+<ol id="CategoryList">
+  <% @quotes.uniq.pluck('category').sort.each do |category| %>  
+    <li>
+    <%= link_to category, category_show_path(category) %> (<%= @quotes.where(category: category).count %>)
+    </li>
+  <% end %>
+</ol>

@@ -1,7 +1,9 @@
-<ul class="nav nav-pills">
-  <li><%=link_to 'Home', root_path %></li>
-  <li><%=link_to 'By ID', '/quotes/1' %></li>
-  <li><%= link_to 'By Category', quotes_category_path %></li>
-  <li><%= link_to 'About', about_page_path %></li>
-  <li><%= link_to 'Create new quote', new_quote_path %></li>
-</ul>
+<div id="navbar">
+  <%=link_to 'Home', root_path, :class => "btn btn-default" %>
+  <%=link_to 'By ID', '/quotes/1', :class => "btn btn-default" %>
+  <%= link_to 'By Category', category_path, :class => "btn btn-default" %>
+  <%= link_to 'By Author', authors_path, :class => "btn btn-default" %>
+  <%= link_to 'Create new quote', new_quote_path, :class => "btn btn-default" %>
+    <%= link_to 'About', about_page_path, :class => "btn btn-default" %>
+
+</div>

@@ -3,7 +3,7 @@
 </div>
 
 <%= render 'shared/nav' %>
-
+<%= render 'flash' %>
 
 <p>Quote #<%= @quote.pkey %> </p>
 <p>Author: <%= @quote.author %> </p>
@@ -11,16 +11,14 @@
 
 <ul class="pager">
 <% if @quote.previous.presence %> 
-<li><%= link_to 'Previous', @quote.previous %></li> | 
+<li><%= link_to 'First', @quote.first %></li>  |
+<li><%= link_to 'Previous', @quote.previous %></li> 
 <% end %>
 <% if @quote.next.presence %> 
-<li><%= link_to 'Next', @quote.next %></li>
+<li><%= link_to 'Next', @quote.next %></li> | 
+<li><%= link_to 'Last', @quote.last %></li>
 <% end %>
 </ul>
 
-<button type="button" class="btn btn-default"> 
-<%= link_to 'Back Home', {:action => 'index'} %>
-</button>
-<button type="button" class="btn btn-default"> 
-<%= link_to 'Edit', edit_quote_path(@quote) %>
-</button>
+<%= link_to 'Edit', edit_quote_path(@quote), :class => "btn btn-primary" %>
+<%= link_to 'Back Home', {:action => 'index'}, :class => "btn btn-primary" %>

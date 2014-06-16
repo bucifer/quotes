@@ -17,23 +17,47 @@
 @import "bootstrap";
 @import "bootstrap/theme";
 
-body {
+#ReturnNav {
+	margin-top: 5%;
+}
 
+#movebutton {
+	margin-left: 45%;
+}
+
+#CategoryList {
+	border: 1px solid black;
+	a {
+		font-size: 150%;
+	}
+	li {
+		margin: 2%;
+		margin-bottom: 5%;
+		display: inline-block;
+	}
+}
+
+#navbar {
+	margin-bottom: 2.5%;
+	a {
+		margin-right: 1%;	
+	}
 }
 
 .listing {
-	border: 10px solid black;
-    border-spacing: 10px;
+    border-spacing: 8px;
+    border-bottom: 1px black dashed;
     border-collapse: separate;
     th {
-    	border: 1px solid black;
+    	text-align: center;
+    	border-bottom: 1px black dashed;
+    	border-top: 1px black dashed;
     }
     td {
-    	border: 1px solid black;
     }
 
-    	a {
-	  color: #000;
+   	a {
+	  color: blue;
 	  &:visited {
 	    color: brown;
 	  }
@@ -43,7 +67,6 @@ body {
 	  }
 	}
 }
-
 
 #navclear {
 	margin-bottom: 5%;

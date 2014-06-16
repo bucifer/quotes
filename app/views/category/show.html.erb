@@ -1,11 +1,26 @@
-<%= render 'shared/category' %>
+<div class='jumbotron' id="top">
+<h1>Category Section: <%= @category.first.category %></h1>
+</div>
+<%= render 'shared/nav' %>
+
+<%= link_to 'Back to Category Index', category_path, :class => "btn btn-primary"  %>
+<% if @category.size > 2 %>
+<a class = "btn btn-primary" href="#jumpbottom">Move to Bottom</a>
+<% end %>
+<hr>
 
 <% @category.each do |quote| %>
 <div>
-<p> <%= quote.category %> </p>
-<p> <%= quote.author %> </p>
+<p><strong> <%= quote.category %></strong></p>
+<p> #<%= quote.id %> </p>
 <p> <%= quote.text %> </p>
+<p><em><%= quote.author %></em></p>
+<%= link_to 'Edit', edit_quote_path(quote.id) %>
+<hr>
 </div>
 <% end %>
-
-<%= link_to 'Home', quotes_path %>
+<p><em>End of Page</em></p>
+<div id="jumpbottom"></div>
+<% if @category.size > 2 %>
+<a href="#top" class="btn btn-primary" id="movebutton">Move to Top</a>
+<% end %>

@@ -1,16 +1,6 @@
 <h1>Edit Existing Quote <%=@quote.pkey%> </h1>
 
 <%= form_for(@quote) do |f| %>
-  <% if @quote.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
-      <ul>
-      <% @quote.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <p>
     <%= f.label :category %><br>
@@ -22,15 +12,17 @@
   </p>
     <p>
     <%= f.label :text %><br>
-    <%= f.text_area :text %>
+    <%= f.text_area :quotetext %>
   </p>
   
+  <button type="submit" class="btn btn-primary">
+    Update quote
+  </button>
 
-  <div class="actions">
-    <%= f.submit "Update quote" %>
-  </div>
-
+<%= link_to quote_path(@quote.id), :class => "btn btn-primary", method: :delete, data: {confirm: "Really delete Quote ##{@quote.pkey}?"} do %>Delete<% end %>
 <% end %>
 
+<div id="ReturnNav">
 <%= link_to 'Show', @quote %> |
-<%= link_to 'Back', quotes_path %>
+<%= link_to 'Home', quotes_path %>
+</div>

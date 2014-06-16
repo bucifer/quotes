@@ -20,6 +20,14 @@ class Quote < ActiveRecord::Base
       Quote.previous(self.pkey).first
     end
 
+    def last
+      Quote.last
+    end
+
+    def first
+      Quote.first
+    end
+
 	  def text
 	 	  read_attribute('quotetext')
 	 end
