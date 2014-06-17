@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.3.4
 -- Dumped by pg_dump version 9.3.4
--- Started on 2014-06-16 18:10:25
+-- Started on 2014-06-16 23:40:58
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -122,22 +122,19 @@ Action	Jim Rohn	It doesn't matter which side of the fence you get off on sometim
 Anger	Buddha	Holding on to anger is like grasping a hot coal with the intent of throwing it at someone else; you are the one who gets burned	32
 Anger	Buddha	You will not be punished for your anger, you will be punished by your anger	34
 Anger	Medgar Evans	When you hate, the only one that suffers is you. Because most of the people you hate don't know it and the rest don't care	35
-Anger	Epictus	In the long run, every man will pay the penalty for his own misdeeds. He will reap what he sowed. She will reap what she sowed. The man who remembers this will be angry with no one, offend no one, hate no one, vilify no one	36
 Anger	Aristotle	Anybody can become angry - that is easy, but to be angry with the right person and to the right degree and at the right time and for the right purpose, and in the right way, that is not within everybody's power and is not easy	37
 Anger	Mark Twain	Anger is an acid that can do more harm to the vessel in which it is stored than to anything on which it is poured	38
 Anger	Booker T. Washington	I shall allow no man to belittle my soul by making me hate him	39
 Anger	Harold and Kumar	Look at me. I'm fat, black, can't dance, and I have two gay fathers. People have been messing with me my whole life. I learned a long time ago there's no sense getting all riled up every time a bunch of idiots give you a hard time. In the end, the universe tends to unfold as it should	40
 Anger	Laurence Jones	I have no time to quarrel, no time for regrets and no man can force me to stoop low enough to hate him. Can't you see I'm busy trying to educate the poor?	33
+Anger	Epictetus	In the long run, every man will pay the penalty for his own misdeeds. He will reap what he sowed. She will reap what she sowed. The man who remembers this will be angry with no one, offend no one, hate no one, vilify no one	36
 Appreciation	Pastor Joel Osteen	It's good to have goals and dreams, but while you're waiting for things to change, waiting for promises to come to pass, don't be discontent with where you are. Learn to enjoy the season that you're in	41
 Appreciation	Alexandre Dumas	"Those born to wealth, and who have the means of gratifying every wish, know not what is the real happiness of life, just as those who have been tossed on the stormy waters of the ocean on a few frail planks can alone realize the blessings of fair weather."-  The Count of Monte Cristo	42
 Appreciation	Alexandre Dumas	"This piece of iron which he had been allowed to keep aroused a more profound wave of gratitude towards Heaven in his heart than the greatest blessings that he experienced in his life outside of prison" - The Count of Monte Cristo, describing Edmond Dantes when he luckily finds a piece of iron to dig a hole out of his prison	43
 Appreciation	Master Oogway	Yesterday is history, tomorrow is mystery. But today is a gift. That's why we call it the Present	44
 Appreciation	William Arthur Ward	Feeling gratitude and not expressing it is like wrapping a present and not giving it	45
 Appreciation	John Burroughs	I still find each day too short for all the thoughts I want to think, all the walks I want to take, all the books I want to read, and all the friends I want to see	46
-Appreciation	Johann Wolfgang Von Goethe	Go to foreign countries and you will get to know the good things one possesses at home	47
-Career	Steve jobs	When you grow up you tend to get told that the world is the way it is and your life is just to live your life inside the world. Try not to bash into the walls too much. Try to have a nice family, have fun, save a little money. That's a very limited life. Life can be much broader once you discover one simple fact: Everything around you that you call life was made up by people that were no smarter than you and you can change it, you can influence it, you can build your own things that other people can use.	48
 Career	Albert Einstein	Everybody is a genius. But if you judge a fish by its ability to climb a tree, it will live its whole life believing it is stupid.	49
-Career	Steve jobs	I have looked in the mirror every morning and asked myself: "If today were the last day of my life, would I want to do what I am about to do today?" And whenever the answer has been "No" for too many days in a row, I know I need to change something.	50
 Career	Confucius	Choose a job you love, and you will never have to work a day in your life	51
 Career	Thomas Edison	I never did a day's work in my life. It was all fun	52
 Career	Steve Jobs	You know, my main reaction to this money thing is that it's humorous, all the attention to it, because it's hardly the most insightful or valuable thing that's happened to me	53
@@ -153,6 +150,8 @@ Comedy	Chris Rock	It's extraordinary to me when you get a laugh. That you can go
 Comedy	Jim Carrey	If I had never ventured beyond being a stand-up comic, then I would be sitting in my house today working on my Leonardo DiCaprio impression	63
 Comedy	Bill Hicks	Occasionally, people get upset because they don't think it's funny. Somebody asked me "Bill why can't you do things that appeal to everybody?" ?? well that's impossible! What a burden! I will please all people! No one's done that yet. What am I supposed to do, change my beliefs and attitude for them? To be what to them?	64
 Comedy	Bill Hicks	I honestly believe we are all the same. It's condescending to say "I will give them what THEY want". "You are all a bunch of idiots so I will do things I don't believe in to amuse you"	65
+Appreciation	Johann Wolfgang von Goethe	Go to foreign countries and you will get to know the good things one possesses at home	47
+Career	Steve Jobs	I have looked in the mirror every morning and asked myself: "If today were the last day of my life, would I want to do what I am about to do today?" And whenever the answer has been "No" for too many days in a row, I know I need to change something.	50
 Comedy	Sidonie Gabrielle	"Sit down and put down everything that comes into your head and then you're a writer. But an author is one who can judge his own stuff's worth, without pity, and destroy most of it."	66
 Comedy	Mahatma Gandhi	If I had no sense of humor, I would long ago have committed suicide	67
 Compassion	Jim Rohn	Whoever renders service to many puts himself in line for greatness - great wealth, great return, great satisfaction, great reputation, and great joy	68
@@ -295,7 +294,6 @@ Education & Learning	George Carlin	Respect and Obedience should not be automatic
 Education & Learning	George Carlin	We believe in stupid things because we are pounded ideas as children. Kids are too young to argue against ideas from adults. Up to a certain age, kids believe everything grown-ups tell them. EVERYTHING. So they don't learn how to question things. They become adults, they still don't question things	206
 Education & Learning	George Carlin	Children should be taught to question everything they read and hear. They should be taught to question authority. Parents and teachers don't want to teach kids to question authority because they themselves are authority figures. So they don't want to undermine their own bullshit inside the household and classrooms. So they stroke the kid, the kid strokes them, they all stroke each other and they all grow up fucked up and come to shows like this	207
 Education & Learning	Terry Bu	I learned more about life and myself in the first few years out of school than 15 years of public schooling combined	208
-Failure	Bruce Lee	Don't fear failure. ? Not failure, but low aim, is the crime. In great attempts it is glorious even to fail.	209
 Failure	Batman	Why do we fall, Bruce? So we can learn to pick ourselves up	210
 Failure	Michael Jordan	I've failed over and over and over again in my life and that is why I succeed.	211
 Failure	Confucius	"Our greatest glory is not in never falling, but in rising every time we fall"	212
@@ -311,7 +309,6 @@ Failure	J. K. Rowling	It is impossible to live without failing at something, unl
 Failure	Malcolm Forbes	Failure is success if we learn from it	222
 Failure	George Burns	I honestly think it is better to be a failure at something you love than to be a success at something you hate	223
 Failure	Henry Ford	When everything seems to be going against you, remember that the airplane takes off against the wind, not with it	224
-Failure	Japanese Proverb	人生は七?び八起き	225
 Failure	Unknown	"Great athletes don't let missed shots bother them on the next shot. Remember that you did the best with your ability at the time, learn from it and move on. "	226
 Forgiveness	Buddha	He who knows and understands all forgives all	227
 Forgiveness	Bible	Father, forgive them; for they know not what they do	228
@@ -397,11 +394,10 @@ Intelligence & Wisdom	Tony Robbins	Passion is the genesis of genius	307
 Intelligence & Wisdom	Fortune Cookie	Talent is a flame, Genius is a fire	308
 Intelligence & Wisdom	Unknown	Wise men, when in doubt whether to speak or to keep quiet, give themselves the benefit of the doubt, and remain silent.	309
 Intelligence & Wisdom	Napoleon Hill	"First comes thought; then organization of that thought, into ideas and plans; then transformation of those plans into reality. The beginning, as you will observe, is in your imagination."	310
-Modesty	Lao Tzu 	The great rivers and seas are kings of all mountain streams because they skillfully stay below them. That is why they can be their kings. Therefore, in order to be the superior of the people / One must, in the use of words, place himself below them. And in order to be ahead of the people, one must, in one's own person, follow them. Therefore the sage places himself above the people and they do not feel his weight. He places himself in front of them and the people do not harm him. Therefore the world rejoices in praising him without getting tired of it. It is?precisely?because he does not compete, that the world cannot compete with him.	311
-Modesty	Lao Tzu 	Know that you possess the strong, masculine principle but abide by the meek, feminine principle. The one who does not contend with others flows with nature like water	312
 Modesty	Unknown	Reveal your weaknesses, loudly admit your weaknesses and be intentionally vulnerable. Don??t try to be strong, intelligent and superior. Gladly act weak and foolish	313
 Modesty	Unknown	"Accomplish but do not boast, accomplish without show, accomplish without arrogance, accomplish without grabbing, accomplish without forcing"	314
 Modesty	Lao Tzu	When you are content to be simply yourself and don't compare or compete, everybody will respect you.	315
+Modesty	Lao Tzu	Know that you possess the strong, masculine principle but abide by the meek, feminine principle. The one who does not contend with others flows with nature like water	312
 Modesty	Lao Tzu	"Boasting of wealth and virtue brings your demise"	316
 Modesty	Jean Vanier	I am struck by how sharing our weakness and difficulties is more nourishing to others than sharing our qualities and successes.	317
 Modesty	Lao Tzu	The higher the sun arises, the less shadow he casts;  the greater the goodness, the less it covets praise; yet it cannot avoid its rewards in honours	318
@@ -621,7 +617,10 @@ Learning	John Wooden	Don't look for the big, quick improvement. Seek the small i
 Change	Karl Marx	The philosophers have only interpreted the world, in various ways. The point, however, is to change it.	536
 Action	Mahatma Gandhi	The future depends on what you do today	1
 Compassion	Mother Teresa	Kind words can be short and easy to speak but their echoes are truly endless.	76
-asdf	asdf	asdfd	545
+Modesty	Lao Tzu	The great rivers and seas are kings of all mountain streams because they skillfully stay below them. That is why they can be their kings. Therefore, in order to be the superior of the people / One must, in the use of words, place himself below them. And in order to be ahead of the people, one must, in one's own person, follow them. Therefore the sage places himself above the people and they do not feel his weight. He places himself in front of them and the people do not harm him. Therefore the world rejoices in praising him without getting tired of it. It is?precisely?because he does not compete, that the world cannot compete with him.	311
+Career	Steve Jobs	When you grow up you tend to get told that the world is the way it is and your life is just to live your life inside the world. Try not to bash into the walls too much. Try to have a nice family, have fun, save a little money. That's a very limited life. Life can be much broader once you discover one simple fact: Everything around you that you call life was made up by people that were no smarter than you and you can change it, you can influence it, you can build your own things that other people can use.	48
+Failure	Bruce Lee	Don't fear failure. Not failure, but low aim, is the crime. In great attempts it is glorious even to fail.	209
+Failure	Japanese Proverb	人生七転び八起き	225
 \.
 
 
@@ -655,7 +654,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2014-06-16 18:10:26
+-- Completed on 2014-06-16 23:40:59
 
 --
 -- PostgreSQL database dump complete

@@ -3,7 +3,7 @@
 <div class='jumbotron' id="top">
 <h1>Category Section: <%= @category.first.category %></h1>
 </div>
-<%= render 'shared/nav' %>
+<%= render partial: 'shared/nav' %>
 
 <%= link_to 'Back to Category Index', category_path, :class => "btn btn-primary"  %>
 <% if @category.size > 2 %>

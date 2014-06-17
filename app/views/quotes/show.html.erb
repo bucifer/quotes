@@ -4,8 +4,8 @@
 <h1> Quote #<%= @quote.pkey %> </h1>
 </div>
 
-<%= render 'shared/nav' %>
-<%= render 'flash' %>
+<%= render partial: 'shared/nav' %>
+<%= render partial: 'flash' %>
 
 <p>ID #<%= @quote.pkey %> </p>
 <p><strong>Category: <%= @quote.category %> </strong></p>

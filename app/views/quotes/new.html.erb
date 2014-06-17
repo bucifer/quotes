@@ -1,15 +1,10 @@
 <% @page_title = "New" %>
-
-
 <h1>Create New Quote</h1>
+<%= display_error_messages(@quote) %>
 
-<%= form_for(:quote, :url => {:action => 'create'}) do |f| %>
-
-<%= render partial: 'form', locals: {:foo => f} %>
-
-  
-<button type="submit" class="btn btn-success">Create Quote</button>
-
+<%= form_for (:quote), url: quotes_path do |f| %>
+  <%= render partial: 'form', locals: {:foo => f} %>
+  <button type="submit" class="btn btn-success">Create Quote</button>
 <% end %>
 
 <br>

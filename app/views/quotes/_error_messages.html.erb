@@ -1,8 +1,10 @@
-  <div id="error Explanation">
-  <h2><%= pluralize(object.errors.size, "error") %>prohibitied this record from being saved </h2>
+<% if object && object.errors.size > 0 %>
+<div id="error_explanation">
+  <h2><%= pluralize(object.errors.size, "error") %> prohibited this record from being saved </h2>
   <ul>
-  <% object.errors.full_messages each do |msg| %>
+  <% object.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
     <% end %>
     </ul>
   </div>
+<% end %>

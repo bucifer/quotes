@@ -6,7 +6,7 @@
 <h1>By Author: <%= @author.first.author %> </h1>
 </div>
 
-<%= render 'shared/nav' %>
+<%= render partial:'shared/nav' %>
 
 <%= link_to 'Back to Authors Index', authors_path, :class => "btn btn-primary"  %>
 <% if @author.size > 4 %>

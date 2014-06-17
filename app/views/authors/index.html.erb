@@ -4,7 +4,7 @@
 <h1>By Author Index</h1>
 </div>
 
-<%= render 'shared/nav' %>
+<%= render partial: 'shared/nav' %>
 
 <ol>
   <% @quotes.uniq.pluck('author').sort.each do |author| %>  

@@ -1,5 +1,7 @@
 <h1>Edit Existing Quote <%=@quote.pkey%> </h1>
 
+<%= display_error_messages(@quote) %>
+
 <%= form_for(@quote) do |f| %>
 
 <%= render partial: 'form', locals: {:foo => f} %>

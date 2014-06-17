@@ -3,7 +3,7 @@
 <div class='jumbotron' id="top">
 <h1>Category Index</h1>
 </div>
-<%= render 'shared/nav' %>
+<%= render partial: 'shared/nav' %>
 
 <ol id="CategoryList">
   <% @quotes.uniq.pluck('category').sort.each do |category| %>  

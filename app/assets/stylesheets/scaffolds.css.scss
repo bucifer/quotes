@@ -28,14 +28,27 @@ div {
   color: green;
 }
 
+body {
+  form textarea { 
+      width: 75%;
+      height: 10em;
+      border-radius: 4px;
+      border: 1px solid black;
+      font-size: 1.3em;
+    }
+  }
+
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
+  border: 1px solid black;
+  textarea {
+    width: 750px;
+  }
 }
 
 #error_explanation {
-  width: 450px;
   border: 2px solid red;
   padding: 7px;
   padding-bottom: 0;
@@ -45,9 +58,9 @@ div {
     text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
-    font-size: 12px;
+    font-size: 1.5em;
     margin: -7px;
-    margin-bottom: 0px;
+    margin-bottom: 1%;
     background-color: #c00;
     color: #fff;
   }
