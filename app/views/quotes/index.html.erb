@@ -18,7 +18,7 @@
       <th>Actions</th>
     </tr>
     <% @quotes.each do |quote| %>
-    <tr>
+    <tr class="<%= cycle('odd','even') %>">
       <td><%=quote.pkey %></td>
       <td><%=quote.category %></td>
       <td><%=quote.author %></td>

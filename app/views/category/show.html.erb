@@ -1,3 +1,5 @@
+<% @page_title = @category.first.category %>
+
 <div class='jumbotron' id="top">
 <h1>Category Section: <%= @category.first.category %></h1>
 </div>
@@ -9,15 +11,15 @@
 <% end %>
 <hr>
 
-<% @category.each do |quote| %>
-<div>
-<p><strong> <%= quote.category %></strong></p>
-<p> #<%= quote.id %> </p>
-<p> <%= quote.text %> </p>
-<p><em><%= quote.author %></em></p>
-<%= link_to 'Edit', edit_quote_path(quote.id) %>
-<hr>
-</div>
+<% @category.sort.each do |quote| %>
+  <div class="<%= cycle('odd', 'even') %>">
+  <p>ID #<%= quote.id %> </p>
+  <p><strong> <%= quote.category %></strong></p>
+  <p> <%= quote.text %> </p>
+  <p><em><%= quote.author %></em></p>
+  <%= link_to 'Edit', edit_quote_path(quote.id) %>
+  <hr>
+  </div>
 <% end %>
 <p><em>End of Page</em></p>
 <div id="jumpbottom"></div>

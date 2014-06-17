@@ -1,0 +1,8 @@
+  <div id="error Explanation">
+  <h2><%= pluralize(object.errors.size, "error") %>prohibitied this record from being saved </h2>
+  <ul>
+  <% object.errors.full_messages each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>

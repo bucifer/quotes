@@ -1,13 +1,16 @@
+<% @page_title = "##{@quote.pkey}" %>
+
 <div class='jumbotron'>
-<h1><%= @quote.category %> </h1>
+<h1> Quote #<%= @quote.pkey %> </h1>
 </div>
 
 <%= render 'shared/nav' %>
 <%= render 'flash' %>
 
-<p>Quote #<%= @quote.pkey %> </p>
-<p>Author: <%= @quote.author %> </p>
+<p>ID #<%= @quote.pkey %> </p>
+<p><strong>Category: <%= @quote.category %> </strong></p>
 <p><%= @quote.text %></p>
+<p><em> <%= @quote.author %></em></p>
 
 <ul class="pager">
 <% if @quote.previous.presence %> 

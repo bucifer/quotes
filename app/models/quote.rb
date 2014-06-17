@@ -4,8 +4,8 @@ class Quote < ActiveRecord::Base
 	
   validates :category, presence: true, length: {minimum: 3, maximum: 25}, 
   format: { with: /\A[a-z A-Z]+\z/, message: "only allows letters" }
-  validates :author, presence: true, length: {minimum: 3, maximum: 25}, 
-  format: { with: /\A[a-z A-Z]+\z/, message: "only allows letters" }
+  validates :author, presence: true, format: { with: /\A[a-z A-Z]+\z/, 
+    message: "only allows letters" }
   validates :quotetext, presence: true
 
   scope :sorted, lambda {order("pkey ASC")}

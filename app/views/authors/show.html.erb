@@ -1,3 +1,7 @@
+<% @page_title = @author.first.author %>
+<% @weirdAuthorsArray = ['Asian Proverb', 'Batman', 'Bible', 'Chinese Proverb', 'Terry Bu', 'Fortune Cookie', 'Japanese Proverb', 
+  'Korean Proverb', 'Unknown'] %>
+
 <div class='jumbotron' id="top">
 <h1>By Author: <%= @author.first.author %> </h1>
 </div>
@@ -8,15 +12,38 @@
 <% if @author.size > 4 %>
 <a class = "btn btn-primary" href="#jumpbottom">Move to Bottom</a>
 <% end %>
-<hr>
 
-<% @author.sort.each do |author| %>
-<div>
-<p><strong> <%= author.category %></strong></p>
-<p><em><%= author.author %></em></p>
-<p> <%= author.text %> </p>
 <hr>
+<div class="media">
+<% if @author.first.author == 'Abraham Lincoln' %>
+  <a class="pull-left" href="#">
+  <%= image_tag('lincoln.jpg', :size => '100x130', :alt => 'Lincoln', :class => "media-object") %> </a>
+<% end %>
+   <div class="media-body">
+      <h4 class="media-heading">
+<% if !@weirdAuthorsArray.include? @author.first.author %>
+      You have <%= pluralize(@author.size, 'quote') %> by <a target=”_blank” href="http://www.google.com/search?q=<%=@author.first.author%>"><%= @author.first.author %></a>. (Click for Google lookup on author.)
+<% else %>
+      You have <%= pluralize(@author.size, 'quote') %> by <%=@author.first.author%>.
+<% end %>
+   </div>
 </div>
+
+
+
+
+
+
+<hr>
+<% @author.sort.each do |author| %>
+<div class="<%= cycle('odd', 'even') %>">
+  <p>ID # <%=author.pkey %> </p>
+  <p><strong> <%= author.category %></strong></p>
+  <p> <%= author.text %> </p>
+  <p><em><%= author.author %></em></p>
+  <%= link_to 'Edit', edit_quote_path(author.id) %>
+  <hr>
+  </div>
 <% end %>
 
 <p><em>End of Page</em></p>

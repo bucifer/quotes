@@ -1,26 +1,16 @@
+<% @page_title = "New" %>
+
+
 <h1>Create New Quote</h1>
 
 <%= form_for(:quote, :url => {:action => 'create'}) do |f| %>
 
-  <p>
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
-  </p>
-    <p>
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
-  </p>
-    <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :quotetext %>
-  </p>
+<%= render partial: 'form', locals: {:foo => f} %>
+
   
-  <div class="actions">
-    <%= f.submit "Create new quote" %>
-  </div>
+<button type="submit" class="btn btn-success">Create Quote</button>
 
 <% end %>
 
-<button>
-<%= link_to 'Back', quotes_path %>
-</button>
+<br>
+<%= link_to 'Home', quotes_path, :class => "btn btn-default" %>
