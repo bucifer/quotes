@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   get '/category' => 'category#index', as: 'category'
   get '/category/:category' => 'category#show', as: 'category_show'
   get '/about' => 'static_pages#about', as: :about_page
-    resources :quotes
-
+  resources :users
+  resources :quotes
+  resources :user_sessions, only: [ :new, :create, :destroy]
+  get 'login' => 'user_sessions#new'
+  get 'logout' => 'user_sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

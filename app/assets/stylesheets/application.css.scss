@@ -10,6 +10,25 @@
 @import "bootstrap";
 @import "bootstrap/theme";
 
+#login 
+{
+	float: right;
+	color: white;
+}
+
+#navbar {
+	margin-bottom: 2.5%;
+	font-size: 150%;
+	display: inline-block;
+	a {
+	  &:hover {
+	    color: #fff;
+	    background-color: navy;
+	    text-decoration: none;
+	  }
+	}
+}
+
 #createNew {
 	display: inline-block;
 	float: right;
@@ -36,13 +55,6 @@
 		margin: 2%;
 		margin-bottom: 5%;
 		display: inline-block;
-	}
-}
-
-#navbar {
-	margin-bottom: 2.5%;
-	a {
-		margin-right: 1%;	
 	}
 }
 

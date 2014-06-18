@@ -1,10 +1,10 @@
 <div id="navbar">
-  <%=link_to 'Home', root_path, :class => "btn btn-default" %>
-  <%=link_to 'By ID', '/quotes/1', :class => "btn btn-default" %>
-  <%= link_to 'By Category', category_path, :class => "btn btn-default" %>
-  <%= link_to 'By Author', authors_path, :class => "btn btn-default" %>
-  <%= link_to 'About', about_page_path, :class => "btn btn-default" %>
+  <%=link_to_unless_current 'Home', root_path%> | 
+  <%=link_to_unless_current 'By ID', '/quotes/1' %> | 
+  <%=link_to_unless_current 'By Category', category_path %> | 
+  <%=link_to_unless_current 'By Author', authors_path %> | 
+  <%=link_to_unless_current 'About', about_page_path %>
+</div>
   <div id="createNew">
   <%= link_to(image_tag('plus_sign.png', :size => '11x11', :alt => '+') + " Create new quote", new_quote_path, :class => 'btn btn-success' ) %>
   </div>
-</div>

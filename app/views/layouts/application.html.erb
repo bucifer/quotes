@@ -8,15 +8,26 @@
 </head>
 <body>
 <div class="container">
-<div id="navclear">
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-   <div class="navbar-header">
-      <a class="navbar-brand" href="/quotes">Terry's Favorite Quotes</a>
-   </div>
-</nav>
-</div>
+ 
+  <div id="navclear">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+     <div class="navbar-header">
+        <a class="navbar-brand" href="/quotes">Terry's Favorite Quotes</a>
+     </div>
+       <span id="login">
+          <% if logged_in? %>
+          <%= "Logged in as #{current_user.email}" %>
+          <%= link_to "(logout)", logout_path %>
+        <% else %>
+          <%= link_to "(login)", login_path %>
+        <% end %>
+        </span>
+  </nav>
 
-<%= yield %>
+  </div>
+
+  <%= yield %>
+
 
 </div>
 </body>

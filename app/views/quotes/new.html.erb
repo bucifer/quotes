@@ -1,6 +1,6 @@
 <% @page_title = "New" %>
 <h1>Create New Quote</h1>
-<%= display_error_messages(@quote) %>
+  <%=  render(partial: 'error_messages', locals: {:object => @quote}) %> 
 
 <%= form_for (:quote), url: quotes_path do |f| %>
   <%= render partial: 'form', locals: {:foo => f} %>

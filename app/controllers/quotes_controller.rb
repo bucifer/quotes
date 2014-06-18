@@ -1,5 +1,14 @@
 class QuotesController < ApplicationController
   before_action :set_quote, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticated, except: [:index, :show]
+
+  def authenticated
+    unless current_user
+      flash[:danger] = "You need to be admin (or Terry) to perform that action!"
+      redirect_to root_path
+      return false
+    end
+  end
 
   # GET /quotes
   # GET /quotes.json
