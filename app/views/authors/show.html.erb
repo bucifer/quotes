@@ -1,6 +1,4 @@
 <% @page_title = @author.first.author %>
-<% @weirdAuthorsArray = ['Asian Proverb', 'Batman', 'Bible', 'Chinese Proverb', 'Terry Bu', 'Fortune Cookie', 'Japanese Proverb', 
-  'Korean Proverb', 'Unknown'] %>
 
 <div class='jumbotron' id="top">
 <h1>By Author: <%= @author.first.author %> </h1>
@@ -21,6 +19,7 @@
 <% end %>
    <div class="media-body">
       <h4 class="media-heading">
+      <!--to prevent the "Google lookup author" dialogue on authors that don't really needed to be looked up like my name or Fortune COokie --> 
 <% if !@weirdAuthorsArray.include? @author.first.author %>
       You have <%= pluralize(@author.size, 'quote') %> by <a target=”_blank” href="http://www.google.com/search?q=<%=@author.first.author%>"><%= @author.first.author %></a>. (Click for Google lookup on author.)
 <% else %>
@@ -29,11 +28,6 @@
    </div>
 </div>
 
-
-
-
-
-
 <hr>
 <% @author.sort.each do |author| %>
 <div class="<%= cycle('odd', 'even') %>">
@@ -41,6 +35,7 @@
   <p><strong> <%= author.category %></strong></p>
   <p> <%= author.text %> </p>
   <p><em><%= author.author %></em></p>
+  <%= link_to 'Show', quote_path(author.id) %>
   <%= link_to 'Edit', edit_quote_path(author.id) %>
   <hr>
   </div>

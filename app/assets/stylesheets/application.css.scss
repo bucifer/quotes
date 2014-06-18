@@ -10,22 +10,28 @@
 @import "bootstrap";
 @import "bootstrap/theme";
 
-#login 
-{
-	float: right;
-	color: white;
+/* for hijacking bootstrap's style after it gets imported
+"Terry's Favorite Quotes" navbar-brand style
+title link in the top header */
+.navbar-brand {
+		color: lightgrey;
+	  	&:visited {
+	    	color: #58ACFA;
+	  	&:hover {
+		    color: white;
+		    text-decoration: none;
+	  }
+	}
 }
 
-#navbar {
-	margin-bottom: 2.5%;
-	font-size: 150%;
-	display: inline-block;
-	a {
-	  &:hover {
-	    color: #fff;
-	    background-color: navy;
-	    text-decoration: none;
-	  }
+.jumbotron {
+	background-image: image-url("test1.png");
+	background-repeat: no-repeat; 
+	background-size: cover;
+	h1 {
+		text-align: left;
+		color: white;
+
 	}
 }
 
@@ -35,28 +41,9 @@
 }
 
 .odd {
-	background: #d3d3d3;
+	background: #E6E6E6;
 }
 
-#ReturnNav {
-	margin-top: 5%;
-}
-
-#movebutton {
-	margin-left: 45%;
-}
-
-#CategoryList {
-	border: 1px solid black;
-	a {
-		font-size: 150%;
-	}
-	li {
-		margin: 2%;
-		margin-bottom: 5%;
-		display: inline-block;
-	}
-}
 
 .listing {
     border-spacing: 8px;
@@ -82,10 +69,3 @@
 	}
 }
 
-#navclear {
-	margin-bottom: 5%;
-}
-
-.nav {
-	margin-bottom: 5%;
-}

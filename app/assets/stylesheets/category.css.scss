@@ -1,3 +1,45 @@
 // Place all the styles related to the category controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#endOfTable {
+	margin-top: -1%;
+}
+
+#page_info {
+	margin-bottom: -4%;	
+}
+
+#CategoryNavigation {
+	height: auto;	
+}
+
+#CategoryPagination
+{
+	display: inline;
+	float: left;
+	margin-top: -1%;
+	margin-bottom: -1%;
+}
+
+#CategoryNavButtons {
+	float: right;
+	display: inline;;
+}
+
+#CategoryList {
+	border: 1px solid black;
+	a {
+		font-size: 150%;
+	}
+	li {
+		margin: 2%;
+		margin-bottom: 5%;
+		display: inline-block;
+	}
+}
+
+#CategoryContainer {
+	clear: both;
+}
+

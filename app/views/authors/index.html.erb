@@ -6,10 +6,15 @@
 
 <%= render partial: 'shared/nav' %>
 
-<ol>
-  <% @quotes.uniq.pluck('author').sort.each do |author| %>  
+<div>
+<%= page_entries_info @authors, :model => 'authors' %>
+</div>
+<%= will_paginate @authors, renderer: BootstrapPagination::Rails %>
+
+<ul>
+  <% @authors.each do |author| %>  
     <li>
     <%= link_to author, author_show_path(author) %> (<%= @quotes.where(author: author).count %>)
     </li>
   <% end %>
-</ol>
+</ul>

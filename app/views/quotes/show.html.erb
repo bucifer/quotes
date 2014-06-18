@@ -9,8 +9,12 @@
 
 <p>ID #<%= @quote.pkey %> </p>
 <p><strong>Category: <%= @quote.category %> </strong></p>
-<p><%= @quote.text %></p>
-<p><em> <%= @quote.author %></em></p>
+<blockquote><p id="quote"><%= @quote.text %></p>
+<%= link_to @quote.author, author_show_path(@quote.author), :id => "author" %><br>
+<%= picture_caller(@quote.author) %>
+</blockquote>
+
+
 
 <ul class="pager">
 <% if @quote.previous.presence %> 
@@ -23,5 +27,7 @@
 <% end %>
 </ul>
 
+<% if logged_in? %>
 <%= link_to 'Edit', edit_quote_path(@quote), :class => "btn btn-primary" %>
+<% end %>
 <%= link_to 'Back Home', {:action => 'index'}, :class => "btn btn-primary" %>

@@ -1,19 +1,19 @@
-<div class='jumbotron' id="top">
-<h1>Terry's Fav Quotes Database</h1>
+<% @page_title = "Show All Quotes" %>
+
+<div class='jumbotron'>
+<h1>Show All</h1>
 </div>
 
 <%= render partial: 'shared/nav' %>
-  <%= render partial: 'flash' %>
 
+  <div class="page_info"> <%= page_entries_info @quotes, :model => 'quotes' %>  </div>
 
-<a class="btn btn-primary" href="#jumpbottom" id="moveButtons">Move to Bottom</a>
+<div id="FloatingButtons">
+<a href="#navclear" class="btn btn-primary">Move to Top</a>
+<a href="#jumpbottom"class = "btn btn-primary" >Move to Bottom</a>
+</div>
 
-  <div class="page_info"> <%= page_entries_info @quotes,  :model => 'quotes' %>  </div>
-<div id="pagination"> <%= will_paginate @quotes, renderer: BootstrapPagination::Rails %> </div>
-
-
-
-  <table class="listing">
+  <table class="listing" style="clear: both;">
     <tr class="header">
       <th>Pkey</th>
       <th>Category</th>
@@ -39,7 +39,8 @@
     <% end %>
   </table>
 <%= will_paginate @quotes, renderer: BootstrapPagination::Rails %>
-<a href="#navclear" class="btn btn-primary" id="moveButtons">Move to Top</a>
+
+
 <p align='center'><em>End of Page</em></p>
 
   <div id="jumpbottom"><!-- #this is just place-holder anchor so Move-to-Buttom jump buttons work correctly  --></div>

@@ -12,7 +12,7 @@
   <div id="navclear">
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
      <div class="navbar-header">
-        <a class="navbar-brand" href="/quotes">Terry's Favorite Quotes</a>
+        <%= link_to "Terry's Favorite Quotes", root_path, :class=>"navbar-brand" %>
      </div>
        <span id="login">
           <% if logged_in? %>

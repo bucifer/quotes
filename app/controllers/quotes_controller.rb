@@ -1,6 +1,6 @@
 class QuotesController < ApplicationController
   before_action :set_quote, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticated, except: [:index, :show]
+  before_filter :authenticated, except: [:index, :show, :all]
 
   def authenticated
     unless current_user
@@ -13,7 +13,7 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.json
   def index
-    @quotes = Quote.sorted
+    @quotes = Quote.all.sorted.paginate(page: params[:page], per_page: 50)
   end
 
   # GET /quotes/1
@@ -72,6 +72,10 @@ class QuotesController < ApplicationController
 
 
   def author
+  end
+
+  def all
+    @quotes = Quote.all.sorted.paginate(page: params[:page], per_page: 550)
   end
 
   #it's private so only the controller can use it to do its work. 

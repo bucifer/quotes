@@ -1,0 +1,70 @@
+#FloatingButtons
+{
+	position: fixed;
+	top: 39%;
+	right: 10%;
+	a {
+		margin-bottom: 10%;
+		display: block;
+	}
+}
+
+#login 
+{
+	float: right;
+	margin-top: 0.5%;
+	  a {
+	  font-size: 1.5em;
+	  color: white;
+	  &:visited {
+	    color: #58ACFA;
+	  }
+	  &:hover {
+	    color: #2EFEF7;
+	    text-decoration: none;
+	  }
+	}
+}
+
+/* This is for shared/nav partial
+ Main navigation bar across all pages */
+
+#navbar {
+	margin-bottom: 2.5%;
+	font-size: 150%;
+	display: inline-block;
+	a {
+	  &:hover {
+	    color: black;
+	    background-color: lightgrey;
+	    text-decoration: none;
+	  }
+	}
+}
+
+#navclear {
+	margin-bottom: 5%;
+}
+
+.nav {
+	margin-bottom: 5%;
+}
+
+/*  */
+
+
+
+#ReturnNav {
+	margin-top: 5%;
+}
+
+#moveButtons {
+	float: right;
+	margin-top: 1.5%;
+	display:inline-block;
+}
+
+#pagination
+{
+	display: inline;
+}
