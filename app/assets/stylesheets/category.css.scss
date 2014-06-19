@@ -7,23 +7,24 @@
 }
 
 #page_info {
-	margin-bottom: -4%;	
-}
-
-#CategoryNavigation {
-	height: auto;	
+	float: right;	
+	margin-top: 0.5%;
+	line-height: 0;
 }
 
 #CategoryPagination
 {
 	display: inline;
-	float: left;
-	margin-top: -1%;
-	margin-bottom: -1%;
+	float: right;
+}
+
+#CategoryNavigation {
+	float: left;	
+	margin-bottom: 1.5%;
 }
 
 #CategoryNavButtons {
-	float: right;
+	float: left;
 	display: inline;;
 }
 

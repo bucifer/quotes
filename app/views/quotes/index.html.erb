@@ -6,7 +6,9 @@
   <%= render partial: 'flash' %>
 
 
-<a class="btn btn-primary" href="#jumpbottom" id="moveButtons">Move to Bottom</a>
+<a class="btn btn-primary" href="#jumpbottom" style="float: right;
+  margin-top: 3%;
+  display:inline-block;">Move to Bottom</a>
 
   <div class="page_info"> <%= page_entries_info @quotes,  :model => 'quotes' %>  </div>
 <div id="pagination"> <%= will_paginate @quotes, renderer: BootstrapPagination::Rails %> </div>
@@ -28,7 +30,7 @@
       <td><%=link_to quote.author, author_show_path(quote.author) %></td>
       <td><%=quote.text %></td>
       <td class="actions">
-      <%= link_to("Show", {:action => 'show', :id => quote.id}) %>
+      <%= link_to "Show", {:action => 'show', :id => quote.id}  %>
       <%= link_to("Edit", {:action => 'edit', :id => quote.id}) %>
         <% if logged_in? %>
         <%= link_to quote_path(quote.id), method: :delete, data: {confirm: "Really delete Quote ##{quote.id}?"} do %><span class=edit>Delete</span>

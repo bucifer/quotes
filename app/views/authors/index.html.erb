@@ -5,16 +5,16 @@
 </div>
 
 <%= render partial: 'shared/nav' %>
-
-<div>
-<%= page_entries_info @authors, :model => 'authors' %>
-</div>
-<%= will_paginate @authors, renderer: BootstrapPagination::Rails %>
-
-<ul>
-  <% @authors.each do |author| %>  
-    <li>
-    <%= link_to author, author_show_path(author) %> (<%= @quotes.where(author: author).count %>)
-    </li>
+<div style='width: 150%; margin-left: -10%'>
+  <% i = 0 %>
+  <% while i < @authors.size %>
+    <ul style="float: left;">
+      <% @authors[i..(i+26)].each do |author| %>  
+        <li>
+        <%= link_to author, author_show_path(author) %> (<%= @quotes.where(author: author).count %>)
+        </li>
+      <% end %>
+    </ul>
+    <% i += 27 %>
   <% end %>
-</ul>
+</div>

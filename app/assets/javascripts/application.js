@@ -26,4 +26,6 @@
 //= require bootstrap/tooltip
 //= require bootstrap/popover
 //= require turbolinks
+//= require quotes
 //= require_tree .
+

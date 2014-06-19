@@ -1,7 +1,5 @@
 class Quote < ActiveRecord::Base
-	
-
-  self.table_name = "quotescopy"
+	self.table_name = "quotescopy"
 	self.primary_key = "pkey"
 
   #validate is older version of validation
@@ -10,13 +8,13 @@ class Quote < ActiveRecord::Base
     presence: true, 
     length: {minimum: 3, maximum: 25}, 
     format: { 
-      with: /\A[a-z A-Z &]+\z/, 
-      message: "only allows letters" }
+      with: /\A[a-z A-Z &.]+\z/, 
+      message: "only allows letters and &." }
   validates :author, 
     presence: true, 
     format: { 
-      with: /\A[a-z A-Z &]+\z/, 
-      message: "only allows letters" }
+      with: /\A[a-z A-Z &.]+\z/, 
+      message: "only allows letters and &." }
   validates :quotetext, 
     presence: true
 

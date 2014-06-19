@@ -6,30 +6,51 @@
 
 <%= render partial:'shared/nav' %>
 
+<div id="authorShowMainNav">
 <%= link_to 'Back to Authors Index', authors_path, :class => "btn btn-primary"  %>
-<% if @author.size > 4 %>
+<% if @author.size >= 4 %>
 <a class = "btn btn-primary" href="#jumpbottom">Move to Bottom</a>
 <% end %>
-
-<hr>
-<div class="media">
-<% if @author.first.author == 'Abraham Lincoln' %>
-  <a class="pull-left" href="#">
-  <%= image_tag('lincoln.jpg', :size => '100x130', :alt => 'Lincoln', :class => "media-object") %> </a>
-<% end %>
-   <div class="media-body">
-      <h4 class="media-heading">
-      <!--to prevent the "Google lookup author" dialogue on authors that don't really needed to be looked up like my name or Fortune COokie --> 
-<% if !@weirdAuthorsArray.include? @author.first.author %>
-      You have <%= pluralize(@author.size, 'quote') %> by <a target=”_blank” href="http://www.google.com/search?q=<%=@author.first.author%>"><%= @author.first.author %></a>. (Click for Google lookup on author.)
-<% else %>
-      You have <%= pluralize(@author.size, 'quote') %> by <%=@author.first.author%>.
-<% end %>
-   </div>
+</div>
+<div id="nextPrevNav">
+<span id="authorNav">
+  <% if @previousAuthor.presence %>
+  <%= link_to "Previous Author: #{@previousAuthor}", author_show_path(@previousAuthor) %>
+  <br>
+  <% end %>
+  <% if @nextAuthor.presence %>
+  <%= link_to "Next Author: #{@nextAuthor}", author_show_path(@nextAuthor) %>
+  <% end %>
+</span>
 </div>
 
 <hr>
-<% @author.sort.each do |author| %>
+
+<div class="media">
+<a href='#', class='pull-left'>
+  <%= media_caller(@author.first.author) %>
+</a>
+   <div class="media-body">
+      <h4 class="media-heading">
+      <!--to prevent the "Google lookup author" dialogue on authors that don't really needed to be looked up like my name or Fortune Cookie --> 
+<% if !@weirdAuthorsArray.include? @author.first.author %>
+      You have <%= pluralize(@author.size, 'quote') %> by <a target=”_blank” href="http://www.google.com/search?q=<%=@author.first.author%>"><%= @author.first.author %></a> (Lookup author)
+      <% if @author.size > 10 %>
+      <br><br>
+      <span id="page_entries">
+        <%= page_entries_info @author_paginate, :model => 'quotes' %> 
+      </span>
+      <br>
+      <% end %>
+      <%= will_paginate @author_paginate %>
+      <% else %>
+      You have <%= pluralize(@author.size, 'quote') %> by <%=@author.first.author%>.
+      <% end %>
+   </div>
+   </div>
+
+<hr>
+<% @author_paginate.sort.each do |author| %>
 <div class="<%= cycle('odd', 'even') %>">
   <p>ID # <%=author.pkey %> </p>
   <p><strong> <%= author.category %></strong></p>
@@ -40,9 +61,9 @@
   <hr>
   </div>
 <% end %>
-
+<%= will_paginate @author_paginate %>
 <p><em>End of Page</em></p>
 <div id="jumpbottom"></div>
-<% if @author.size > 4 %>
+<% if @author.size >= 4 %>
   <a href="#top" class="btn btn-primary" id="movebutton">Move to Top</a>
 <% end %>

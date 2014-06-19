@@ -1,4 +1,8 @@
 <% @page_title = "##{@quote.pkey}" %>
+<%= javascript_tag do %>
+  window.nextID = '<% if @quote.next.presence %> <%= @quote.next.pkey %> <% end %>';
+  window.previousID = '<% if @quote.previous.presence %> <%= @quote.previous.pkey %> <% end %>';
+<% end %>
 
 <div class='jumbotron'>
 <h1> Quote #<%= @quote.pkey %> </h1>
@@ -10,21 +14,20 @@
 <p>ID #<%= @quote.pkey %> </p>
 <p><strong>Category: <%= @quote.category %> </strong></p>
 <blockquote><p id="quote"><%= @quote.text %></p>
-<%= link_to @quote.author, author_show_path(@quote.author), :id => "author" %><br>
-<%= picture_caller(@quote.author) %>
+  <%= link_to @quote.author, author_show_path(@quote.author), :id => "author" %><br>
+  <%= media_caller(@quote.author) %>
 </blockquote>
-
-
 
 <ul class="pager">
 <% if @quote.previous.presence %> 
 <li><%= link_to 'First', @quote.first %></li>  |
-<li><%= link_to 'Previous', @quote.previous %></li> 
+<li><%= link_to 'Previous', @quote.previous, :class => "previous" %></li> 
 <% end %>
 <% if @quote.next.presence %> 
-<li><%= link_to 'Next', @quote.next %></li> | 
+<li><%= link_to 'Next', @quote.next, :class => "next" %></li> | 
 <li><%= link_to 'Last', @quote.last %></li>
 <% end %>
+<p>*Press left and right arrow keys for easy Previous/Next navigation </p>
 </ul>
 
 <% if logged_in? %>

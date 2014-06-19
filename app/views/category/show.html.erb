@@ -12,20 +12,16 @@
     <a class = "btn btn-primary" href="#jumpbottom">Move to Bottom</a>
     <% end %>
   </div>
-  <% if @category.size < 10 %>
-  <div id="CategoryPagination_v2">
-  <% else %>
-  <div id="CategoryPagination">
-  <% end %>
-  <div id="page_info">
-      <%= page_entries_info @category, :model => 'quotes' %>
-    </div>
-      <%= will_paginate @category, renderer: BootstrapPagination::Rails %>
-  </div>
 </div>
 
+  
+  <div id="page_info">
+  <%= page_entries_info @category, :model => 'quotes' %><br>
+  <%= will_paginate @category %>
+  </div>  
+
 <div id="CategoryContainer">
-  <% @category.sort.each do |quote| %>
+  <% @category.each do |quote| %>
     <div class="<%= cycle('odd', 'even') %>">
     <p>ID #<%= quote.id %> </p>
     <p><strong> <%= quote.category %></strong></p>
@@ -38,13 +34,17 @@
   <hr>
     </div>
   <% end %>
+</div>
+
   <div id="endOfTable">
+  <span style="float: right;">
     <%= will_paginate @category, renderer: BootstrapPagination::Rails %>
-    <% if @category.size > 2 %>
-      <a href="#top" class="btn btn-primary" id="moveButtons">Move to Top</a>
+  </span>
+   <% if @category.size > 3 %>
+    <a href="#top" class="btn btn-primary" id="moveButtons" style="float:left;">Move to Top</a>
     <% end %>
     </div>
-</div>
+
 
 <div id="jumpbottom"><!-- #this is just place-holder anchor so Move-to-Buttom jump buttons work correctly  --></div>
 

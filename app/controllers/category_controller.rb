@@ -5,7 +5,7 @@ class CategoryController < ApplicationController
 	end
 
 	def show
-		@category = Quote.where(category: params[:category]).paginate(page: params[:page], per_page: 10)
+		@category = Quote.where(category: params[:category]).sort.paginate(page: params[:page], per_page: 10)
 	end
 
 end
