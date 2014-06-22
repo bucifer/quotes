@@ -48,6 +48,8 @@ test:
 #
 production:
   <<: *default
-  database: quotes_production
-  username: quotes
-  password: <%= ENV['QUOTES_DATABASE_PASSWORD'] %>
+  database: mydb
+  username: postgres
+  password: 
+
+#<%= ENV['QUOTES_DATABASE_PASSWORD'] %>
