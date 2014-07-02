@@ -2,6 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+/*index*/
+#authorsIndex {
+	width: 150%; 
+	margin-top: 2.5%;
+	margin-left: -10%;
+	ul {
+		float: left;
+	}
+}
+
+
+
+
+
+/*for show pages */
 #page_entries {
 	font-size: 0.8em;
 	font-style: italic;

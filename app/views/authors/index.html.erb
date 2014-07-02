@@ -3,12 +3,18 @@
 <div class='jumbotron' id="top">
 <h1>By Author Index</h1>
 </div>
-
 <%= render partial: 'shared/nav' %>
-<div style='width: 150%; margin-left: -10%'>
+
+<%= form_tag(authors_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Authors" %>
+  <button type="submit" class="btn btn-primary">SEARCH</button>
+  <%= link_to "Clear", authors_path, :class => "btn btn-primary" %>
+  <% end %>
+
+<div id="authorsIndex">
   <% i = 0 %>
   <% while i < @authors.size %>
-    <ul style="float: left;">
+    <ul>
       <% @authors[i..(i+26)].each do |author| %>  
         <li>
         <%= link_to author, author_show_path(author) %> (<%= @quotes.where(author: author).count %>)

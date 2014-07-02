@@ -5,16 +5,22 @@
 <%= render partial: 'shared/nav' %>
   <%= render partial: 'flash' %>
 
-
 <a class="btn btn-primary" href="#jumpbottom" style="float: right;
   margin-top: 3%;
   display:inline-block;">Move to Bottom</a>
 
-  <div class="page_info"> <%= page_entries_info @quotes,  :model => 'quotes' %>  </div>
-<div id="pagination"> <%= will_paginate @quotes, renderer: BootstrapPagination::Rails %> </div>
+<%= form_tag(quotes_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Quotes" %>
+  <button type="submit" class="btn btn-primary">SEARCH</button>
+  <%= link_to "Clear", quotes_path, :class => "btn btn-primary" %>
+  <% end %>
 
-
-
+  <div class="page_info"> 
+  <%= page_entries_info @quotes,  :model => 'quotes' %>  
+  </div>
+<div id="pagination"> 
+<%= will_paginate @quotes, renderer: BootstrapPagination::Rails %> 
+</div>
   <table class="listing">
     <tr class="header">
       <th>Pkey</th>

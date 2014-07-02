@@ -5,6 +5,12 @@
 </div>
 <%= render partial: 'shared/nav' %>
 
+<%= form_tag(category_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Category" %>
+  <button type="submit" class="btn btn-primary">SEARCH</button>
+  <%= link_to "Clear", category_path, :class => "btn btn-primary" %>
+  <% end %>
+
 <ol id="CategoryList">
   <% @quotes.uniq.pluck('category').sort.each do |category| %>  
     <li>

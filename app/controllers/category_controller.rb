@@ -1,7 +1,11 @@
 class CategoryController < ApplicationController
 
 	def index
-		@quotes = Quote.all
+		if params[:search]
+	    	@quotes = Quote.category_search(params[:search])
+	    else
+			@quotes = Quote.all
+    	end
 	end
 
 	def show

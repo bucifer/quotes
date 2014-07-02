@@ -13,7 +13,11 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.json
   def index
-    @quotes = Quote.all.sorted.paginate(page: params[:page], per_page: 50)
+    if params[:search]
+      @quotes = Quote.search(params[:search]).sorted.paginate(page: params[:page], per_page: 20)
+    else
+      @quotes = Quote.all.sorted.paginate(page: params[:page], per_page: 50)
+    end
   end
 
   # GET /quotes/1
@@ -75,7 +79,12 @@ class QuotesController < ApplicationController
   end
 
   def all
-    @quotes = Quote.all.sorted.paginate(page: params[:page], per_page: 550)
+    if params[:search]
+      @quotes = Quote.search(params[:search]).sorted.paginate(page: params[:page], per_page: 25)
+    else
+      @quotes = Quote.all.sorted.paginate(page: params[:page], per_page: 1000)
+  end
+
   end
 
   #it's private so only the controller can use it to do its work. 

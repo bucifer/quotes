@@ -1,27 +1,7 @@
-<% @page_title = "Show All Quotes" %>
-
-<div class='jumbotron'>
-<h1>Show All</h1>
-</div>
-
-<%= render partial: 'shared/nav' %>
-
-<%= form_tag(quotes_all_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Quotes" %>
-  <button type="submit" class="btn btn-primary">SEARCH</button>
-  <%= link_to "Clear", quotes_all_path, :class => "btn btn-primary" %>
+<%= ajax_links :section_id => "quoteslist" do %>
+<%= will_paginate @quotes %> 
 <% end %>
-
-  <div class="page_info"> 
-  <%= page_entries_info @quotes,  :model => 'quotes' %>  
-  </div>
-
-<div id="FloatingButtons">
-<a href="#navclear" class="btn btn-primary">Move to Top</a>
-<a href="#jumpbottom"class = "btn btn-primary" >Move to Bottom</a>
-</div>
-
-  <table class="listing" style="clear: both;">
+  <table class="listing">
     <tr class="header">
       <th>Pkey</th>
       <th>Category</th>
@@ -29,6 +9,7 @@
       <th>Quote Text</th>
       <th>Actions</th>
     </tr>
+    <%= ajax_loadzone do %>
     <% @quotes.each do |quote| %>
     <tr class="<%= cycle('odd','even') %>">
       <td><%=quote.pkey %></td>
@@ -36,7 +17,7 @@
       <td><%=link_to quote.author, author_show_path(quote.author) %></td>
       <td><%=quote.text %></td>
       <td class="actions">
-      <%= link_to("Show", {:action => 'show', :id => quote.id}) %>
+      <%= link_to "Show", {:action => 'show', :id => quote.id}  %>
       <%= link_to("Edit", {:action => 'edit', :id => quote.id}) %>
         <% if logged_in? %>
         <%= link_to quote_path(quote.id), method: :delete, data: {confirm: "Really delete Quote ##{quote.id}?"} do %><span class=edit>Delete</span>
@@ -45,11 +26,10 @@
     </td>
     </tr>
     <% end %>
+    <% end %>
   </table>
-
-
-
+<%= will_paginate @quotes, renderer: BootstrapPagination::Rails %>
+<a href="#navclear" class="btn btn-primary" id="moveButtons">Move to Top</a>
 <p align='center'><em>End of Page</em></p>
 
   <div id="jumpbottom"><!-- #this is just place-holder anchor so Move-to-Buttom jump buttons work correctly  --></div>
-

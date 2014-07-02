@@ -3,11 +3,14 @@ require 'will_paginate/array'
 class AuthorsController < ApplicationController
 
 	def index
-		@quotes = Quote.all.paginate(page: params[:page], per_page: 10)
+	if params[:search]
+	    @authors = Quote.authors_search(params[:search]).uniq.pluck('author').sort
+    else
+		@authors = Quote.uniq.pluck('author').sort
+    end
+		@quotes = Quote.all
 		#@authors = Quote.uniq.pluck('author').sort.paginate(page: params[:page], per_page: 25)
 		#paginate testing
-		@authors = Quote.uniq.pluck('author').sort
-
 	end
 
 	def show

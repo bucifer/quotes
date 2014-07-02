@@ -64,4 +64,16 @@ class Quote < ActiveRecord::Base
 	 	  read_attribute('quotetext')
 	 end
 
+   def self.search(query)
+      where("quotetext ILIKE ? OR category ILIKE ? OR author ILIKE ?", "%#{query}%", "%#{query}%", "%#{query}%")
+   end
+
+   def self.authors_search(query)
+      where("author ILIKE ?", "%#{query}%")
+   end
+
+   def self.category_search(query)
+      where("category ILIKE ?", "%#{query}%")
+   end
+
 end
