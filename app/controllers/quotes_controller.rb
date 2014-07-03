@@ -51,6 +51,7 @@ class QuotesController < ApplicationController
   # GET /quotes/1/edit
   def edit
     @quote = Quote.find(params[:id])
+    @authors = Quote.uniq.pluck('author').sort
   end
 
   # PATCH/PUT /quotes/1

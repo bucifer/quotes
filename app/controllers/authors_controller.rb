@@ -7,6 +7,8 @@ class AuthorsController < ApplicationController
 	    @authors = Quote.authors_search(params[:search]).uniq.pluck('author').sort
     else
 		@authors = Quote.uniq.pluck('author').sort
+		@category = Quote.uniq.pluck('category').sort
+
     end
 		@quotes = Quote.all
 	end
