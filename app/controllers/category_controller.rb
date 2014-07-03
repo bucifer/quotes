@@ -6,6 +6,7 @@ class CategoryController < ApplicationController
 	    else
 			@quotes = Quote.all
     	end
+    	@category = Quote.uniq.pluck('category').sort
 	end
 
 	def show

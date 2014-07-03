@@ -1,5 +1,5 @@
-var ready;
-ready = function() {
+var pushArrowNav;
+pushArrowNav = function() {
  $("body").keydown(function(e) {
       if(e.which == 37) { // left     
           $(".previous").trigger("click");
@@ -18,5 +18,4 @@ ready = function() {
     });
   };
 
-$(document).ready(ready);
-$(document).on('page:load', ready);
+$(document).ready(pushArrowNav);

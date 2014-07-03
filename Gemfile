@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem 'rails_12factor'
+gem 'twitter-typeahead-rails'
+gem 'jquery-turbolinks'
 gem 'bootstrap-sass', '3.1.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'

@@ -9,8 +9,6 @@ class AuthorsController < ApplicationController
 		@authors = Quote.uniq.pluck('author').sort
     end
 		@quotes = Quote.all
-		#@authors = Quote.uniq.pluck('author').sort.paginate(page: params[:page], per_page: 25)
-		#paginate testing
 	end
 
 	def show

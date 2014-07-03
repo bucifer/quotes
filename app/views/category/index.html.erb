@@ -1,12 +1,15 @@
 <% @page_title = "Category Index" %>
+<%= javascript_tag do %>
+  window.categoryArray = '<%= @category.to_json.html_safe %>';
+<% end %>
 
 <div class='jumbotron' id="top">
 <h1>Category Index</h1>
 </div>
 <%= render partial: 'shared/nav' %>
 
-<%= form_tag(category_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Category" %>
+<%= form_tag(category_path, :method => "get", id: "category-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Category", :class => "typeahead" %>
   <button type="submit" class="btn btn-primary">SEARCH</button>
   <%= link_to "Clear", category_path, :class => "btn btn-primary" %>
   <% end %>

@@ -1,12 +1,17 @@
 <% @page_title = "By Authors Index" %>
+<%= javascript_tag do %>
+  window.authorsArray = '<%= @authors.to_json.html_safe %>';
+<% end %>
 
 <div class='jumbotron' id="top">
 <h1>By Author Index</h1>
 </div>
 <%= render partial: 'shared/nav' %>
 
+
+
 <%= form_tag(authors_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Authors" %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Authors", :class => "typeahead" %>
   <button type="submit" class="btn btn-primary">SEARCH</button>
   <%= link_to "Clear", authors_path, :class => "btn btn-primary" %>
   <% end %>

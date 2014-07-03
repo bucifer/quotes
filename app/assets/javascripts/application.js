@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap
 //= require bootstrap/affix
@@ -25,7 +26,8 @@
 //= require bootstrap/modal
 //= require bootstrap/tooltip
 //= require bootstrap/popover
-//= require turbolinks
+//= require twitter/typeahead
 //= require quotes
-//= require_tree .
-
+//= require category
+//= require author
+//= require turbolinks
