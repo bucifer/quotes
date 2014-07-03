@@ -18,6 +18,8 @@ class QuotesController < ApplicationController
     else
       @quotes = Quote.all.sorted.paginate(page: params[:page], per_page: 50)
     end
+    @authors = Quote.uniq.pluck('author').sort
+    @category = Quote.uniq.pluck('category').sort
   end
 
   # GET /quotes/1

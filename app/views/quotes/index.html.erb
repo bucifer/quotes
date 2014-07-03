@@ -1,3 +1,8 @@
+<%= javascript_tag do %>
+  window.authorsArray = '<%= @authors.to_json.html_safe %>';
+  window.categoryArray = '<%= @category.to_json.html_safe %>';
+<% end %>
+
 <div class='jumbotron' id="top">
 <h1>Terry's Fav Quotes Database</h1>
 </div>
