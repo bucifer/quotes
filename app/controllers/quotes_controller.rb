@@ -25,7 +25,12 @@ class QuotesController < ApplicationController
   # GET /quotes/1
   # GET /quotes/1.json
   def show
-    @quote = Quote.find(params[:id])
+    respond_to do |format|
+      format.html do
+        @quote = Quote.find(params[:id])
+      end
+      format.json { render :json => @quote }
+    end
   end
 
   # GET /quotes/new

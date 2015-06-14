@@ -3,12 +3,19 @@ require 'will_paginate/array'
 class AuthorsController < ApplicationController
 
 	def index
-	if params[:search]
-	    @authors = Quote.authors_search(params[:search]).uniq.pluck('author').sort
-    else
-		@authors = Quote.uniq.pluck('author').sort
-    end
-		@quotes = Quote.all
+		respond_to do |format|
+			format.html do
+				if params[:search]
+		    		@authors = Quote.authors_search(params[:search]).uniq.pluck('author').sort
+	   			else
+					@authors = Quote.uniq.pluck('author').sort
+	    		end	
+					@quotes = Quote.all
+			end
+	    	format.json { 
+	    		render :json => Quote.uniq.pluck('author').sort
+	    	}
+	    end
 	end
 
 	def show

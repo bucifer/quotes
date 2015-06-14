@@ -1,12 +1,17 @@
 class CategoryController < ApplicationController
 
 	def index
-		if params[:search]
-	    	@quotes = Quote.category_search(params[:search])
-	    else
-			@quotes = Quote.all
+		respond_to do |format|
+			format.html do
+				if params[:search]
+			    	@quotes = Quote.category_search(params[:search])
+			    else
+					@quotes = Quote.all
+		    	end
+		    	@category = Quote.uniq.pluck('category').sort
+	    	end
+	    	format.json {render :json => Quote.uniq.pluck('category').sort}
     	end
-    	@category = Quote.uniq.pluck('category').sort
 	end
 
 	def show
