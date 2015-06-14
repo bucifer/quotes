@@ -1,1 +1,6 @@
 Terry Quotes
+
+*To run it in development (localhost:3000), you need your postgres database running on your machine.
+For Windows, make sure you started PostGreSql Service on startup. If not, go to services and start it manually
+Then go to PGADMIN and start up your default database (username: postgres password: nil)
+
