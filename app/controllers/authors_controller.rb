@@ -19,14 +19,18 @@ class AuthorsController < ApplicationController
 	end
 
 	def show
-		@quotesByAuthor = Quote.where(author: params[:author])
-		@quotes_paginate = @quotesByAuthor.sort.paginate(page: params[:page], per_page: 10)
-		@weirdAuthorsArray = 
-		['Asian Proverb', 'Batman', 'Bible', 'Chinese Proverb', 'Terry Bu', 'Fortune Cookie', 'Japanese Proverb', 'Korean Proverb', 'Unknown']
-		@authors = Quote.uniq.pluck('author').sort
-		@nextAuthor = @authors[(@authors.index(@quotesByAuthor.first.author))+1]
-		@previousAuthor = @authors[(@authors.index(@quotesByAuthor.first.author))-1]
-
+		if params[:author].end_with?(".json")
+			@quotesByAuthor = Quote.where(author: params[:author][0...-5])
+			render :json => @quotesByAuthor
+		else 
+			@quotesByAuthor = Quote.where(author: params[:author])
+			@quotes_paginate = @quotesByAuthor.sort.paginate(page: params[:page], per_page: 10)
+			@weirdAuthorsArray = 
+			['Asian Proverb', 'Batman', 'Bible', 'Chinese Proverb', 'Terry Bu', 'Fortune Cookie', 'Japanese Proverb', 'Korean Proverb', 'Unknown']
+			@authors = Quote.uniq.pluck('author').sort
+			@nextAuthor = @authors[(@authors.index(@quotesByAuthor.first.author))+1]
+			@previousAuthor = @authors[(@authors.index(@quotesByAuthor.first.author))-1]
+		end
 	end
 
 
