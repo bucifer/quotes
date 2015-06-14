@@ -1,14 +1,14 @@
-<% @page_title = @author.first.author %>
+<% @page_title = @quotesByAuthor.first.author %>
 
 <div class='jumbotron' id="top">
-<h1>By Author: <%= @author.first.author %> </h1>
+<h1>By Author: <%= @quotesByAuthor.first.author %> </h1>
 </div>
 
 <%= render partial:'shared/nav' %>
 
 <div id="authorShowMainNav">
 <%= link_to 'Back to Authors Index', authors_path, :class => "btn btn-primary"  %>
-<% if @author.size >= 4 %>
+<% if @quotesByAuthor.size >= 4 %>
 <a class = "btn btn-primary" href="#jumpbottom">Move to Bottom</a>
 <% end %>
 </div>
@@ -28,42 +28,42 @@
 
 <div class="media">
 <a href='#', class='pull-left'>
-  <%= media_caller(@author.first.author) %>
+  <%= media_caller(@quotesByAuthor.first.author) %>
 </a>
    <div class="media-body">
       <h4 class="media-heading">
       <!--to prevent the "Google lookup author" dialogue on authors that don't really needed to be looked up like my name or Fortune Cookie --> 
-<% if !@weirdAuthorsArray.include? @author.first.author %>
-      You have <%= pluralize(@author.size, 'quote') %> by <a target=”_blank” href="http://www.google.com/search?q=<%=@author.first.author%>"><%= @author.first.author %></a> (Lookup author)
-      <% if @author.size > 10 %>
+<% if !@weirdAuthorsArray.include? @quotesByAuthor.first.author %>
+      You have <%= pluralize(@quotesByAuthor.size, 'quote') %> by <a target=”_blank” href="http://www.google.com/search?q=<%=@quotesByAuthor.first.author%>"><%= @quotesByAuthor.first.author %></a> (Lookup author)
+      <% if @quotesByAuthor.size > 10 %>
       <br><br>
       <span id="page_entries">
-        <%= page_entries_info @author_paginate, :model => 'quotes' %> 
+        <%= page_entries_info @quotes_paginate, :model => 'quotes' %> 
       </span>
       <br>
       <% end %>
-      <%= will_paginate @author_paginate %>
+      <%= will_paginate @quotes_paginate %>
       <% else %>
-      You have <%= pluralize(@author.size, 'quote') %> by <%=@author.first.author%>.
+      You have <%= pluralize(@quotesByAuthor.size, 'quote') %> by <%=@quotesByAuthor.first.author%>.
       <% end %>
    </div>
    </div>
 
 <hr>
-<% @author_paginate.sort.each do |author| %>
+<% @quotes_paginate.sort.each do |quote| %>
 <div class="<%= cycle('odd', 'even') %>">
-  <p>ID # <%=author.pkey %> </p>
-  <p><strong> <%= author.category %></strong></p>
-  <p> <%= author.text %> </p>
-  <p><em><%= author.author %></em></p>
-  <%= link_to 'Show', quote_path(author.id) %>
-  <%= link_to 'Edit', edit_quote_path(author.id) %>
+  <p>ID # <%=quote.pkey %> </p>
+  <p><strong> <%= quote.category %></strong></p>
+  <p> <%= quote.text %> </p>
+  <p><em><%= quote.author %></em></p>
+  <%= link_to 'Show', quote_path(quote.id) %>
+  <%= link_to 'Edit', edit_quote_path(quote.id) %>
   <hr>
   </div>
 <% end %>
-<%= will_paginate @author_paginate %>
+<%= will_paginate @quotes_paginate %>
 <p><em>End of Page</em></p>
 <div id="jumpbottom"></div>
-<% if @author.size >= 4 %>
+<% if @quotesByAuthor.size >= 4 %>
   <a href="#top" class="btn btn-primary" id="movebutton">Move to Top</a>
 <% end %>

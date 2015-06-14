@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
+group :development do
+	gem 'guard'
+    gem 'guard-rails'
+end
+
 gem 'rails_12factor'
 gem 'twitter-typeahead-rails'
 gem 'jquery-turbolinks'
