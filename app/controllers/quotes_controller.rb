@@ -37,8 +37,6 @@ class QuotesController < ApplicationController
 
   def create
     #we don't need a TEMPLATE for create beucase it either redirects or renders
-    #create PROCESSES the object data
-    #instantiate a new object using form parameters and quote_params which assings permissions parameters
     @quote = Quote.new(quote_params)
     #if save succeeds, redirect to index root page
     if @quote.save

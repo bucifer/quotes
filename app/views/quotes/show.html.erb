@@ -18,6 +18,7 @@
   <%= link_to @quote.author, author_show_path(@quote.author), :id => "author" %><br>
   <%= media_caller(@quote.author) %>
 </blockquote>
+<p>Updated at <%=@quote.updated_at %>, Created at <%=@quote.created_at %></p>
 
 <ul class="pager">
 <% if @quote.previous.presence %> 
