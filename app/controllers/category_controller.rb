@@ -15,7 +15,13 @@ class CategoryController < ApplicationController
 	end
 
 	def show
-		@category = Quote.where(category: params[:category]).sort.paginate(page: params[:page], per_page: 10)
+		@category = Quote.find_by(category: params[:category]) or not_found
+		respond_to do |format|
+			format.html do
+				@category = Quote.where(category: params[:category]).sort.paginate(page: params[:page], per_page: 10)
+	    	end
+	    	format.json {render :json => Quote.where(category: params[:category]).sort}
+    	end
 	end
 
 end

@@ -4,3 +4,5 @@ Terry Quotes
 For Windows, make sure you started PostGreSql Service on startup. If not, go to services and start it manually
 Then go to PGADMIN and start up your default database (username: postgres password: nil)
 
+run bundle exec guard and rails s in two separate tabs so that you don't have to restart rails server manually.
+guard will automatically check for changes (instantly) and refresh your app for you
